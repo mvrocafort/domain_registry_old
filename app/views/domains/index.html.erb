@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Log In', new_user_session_path) %>
+<% end %>
 
 <h1>Domains</h1>
 
@@ -29,3 +33,13 @@
 <br>
 
 <%= link_to 'New Domain', new_domain_path %>
+
+
+<br>
+
+<%= search_form_for @q do |f| %>
+<%= f.label :domain_name %>
+<%= f.text_field :domain_name_cont, class: 'form-control' %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
+

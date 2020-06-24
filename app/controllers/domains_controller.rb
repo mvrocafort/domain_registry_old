@@ -4,7 +4,9 @@ class DomainsController < ApplicationController
   # GET /domains
   # GET /domains.json
   def index
-    @domains = Domain.all
+    #@domains = Domain.all
+    @q = Domain.ransack(params[:q])
+    @domains = @q.result
   end
 
   # GET /domains/1
