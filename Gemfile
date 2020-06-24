@@ -18,8 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 
 #gem for user authentication
 gem 'devise', '~> 4.7', '>= 4.7.2'
-#gem for search engine
-gem 'ransack', '~> 2.3', '>= 2.3.2'
+
+#epp-client
+gem 'epp-client',           github: 'dotph/epp-client'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

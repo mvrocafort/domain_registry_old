@@ -17,7 +17,7 @@ class RegistrantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create registrant" do
     assert_difference('Registrant.count') do
-      post registrants_url, params: { registrant: { address: @registrant.address, contact_handle: @registrant.contact_handle, contact_number: @registrant.contact_number, first_name: @registrant.first_name, last_name: @registrant.last_name, organization: @registrant.organization } }
+      post registrants_url, params: { registrant: { contact_handle: @registrant.contact_handle } }
     end
 
     assert_redirected_to registrant_url(Registrant.last)
@@ -34,7 +34,7 @@ class RegistrantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update registrant" do
-    patch registrant_url(@registrant), params: { registrant: { address: @registrant.address, contact_handle: @registrant.contact_handle, contact_number: @registrant.contact_number, first_name: @registrant.first_name, last_name: @registrant.last_name, organization: @registrant.organization } }
+    patch registrant_url(@registrant), params: { registrant: { contact_handle: @registrant.contact_handle } }
     assert_redirected_to registrant_url(@registrant)
   end
 

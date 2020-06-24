@@ -69,6 +69,6 @@ class RegistrantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def registrant_params
-      params.require(:registrant).permit(:contact_handle, :first_name, :last_name, :organization, :contact_number, :address)
+      params.require(:registrant).permit(:contact_handle)
     end
 end

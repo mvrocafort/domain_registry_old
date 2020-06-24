@@ -14,8 +14,7 @@ class DomainsTest < ApplicationSystemTestCase
     visit domains_url
     click_on "New Domain"
 
-    fill_in "Contacts", with: @domain.contacts
-    fill_in "Domain name", with: @domain.domain_name
+    fill_in "Name", with: @domain.name
     fill_in "Period", with: @domain.period
     click_on "Create Domain"
 
@@ -27,8 +26,7 @@ class DomainsTest < ApplicationSystemTestCase
     visit domains_url
     click_on "Edit", match: :first
 
-    fill_in "Contacts", with: @domain.contacts
-    fill_in "Domain name", with: @domain.domain_name
+    fill_in "Name", with: @domain.name
     fill_in "Period", with: @domain.period
     click_on "Update Domain"
 

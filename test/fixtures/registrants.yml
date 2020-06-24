@@ -2,16 +2,6 @@
 
 one:
   contact_handle: MyString
-  first_name: MyString
-  last_name: MyString
-  organization: MyString
-  contact_number: MyString
-  address: MyString
 
 two:
   contact_handle: MyString
-  first_name: MyString
-  last_name: MyString
-  organization: MyString
-  contact_number: MyString
-  address: MyString

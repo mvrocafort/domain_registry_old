@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Domain name:</strong>
-  <%= @domain.domain_name %>
+  <strong>Name:</strong>
+  <%= @domain.name %>
 </p>
 
 <p>
@@ -11,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Contacts:</strong>
-  <%= @domain.contacts %>
+  <strong>Registration Date:</strong>
+  <%= @domain.registration_date %>
+</p>
+
+<p>
+  <strong>Expiration Date:</strong>
+  <%= @domain.expiration_date %>
 </p>
 
 <%= link_to 'Edit', edit_domain_path(@domain) %> |

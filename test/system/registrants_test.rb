@@ -14,12 +14,7 @@ class RegistrantsTest < ApplicationSystemTestCase
     visit registrants_url
     click_on "New Registrant"
 
-    fill_in "Address", with: @registrant.address
     fill_in "Contact handle", with: @registrant.contact_handle
-    fill_in "Contact number", with: @registrant.contact_number
-    fill_in "First name", with: @registrant.first_name
-    fill_in "Last name", with: @registrant.last_name
-    fill_in "Organization", with: @registrant.organization
     click_on "Create Registrant"
 
     assert_text "Registrant was successfully created"
@@ -30,12 +25,7 @@ class RegistrantsTest < ApplicationSystemTestCase
     visit registrants_url
     click_on "Edit", match: :first
 
-    fill_in "Address", with: @registrant.address
     fill_in "Contact handle", with: @registrant.contact_handle
-    fill_in "Contact number", with: @registrant.contact_number
-    fill_in "First name", with: @registrant.first_name
-    fill_in "Last name", with: @registrant.last_name
-    fill_in "Organization", with: @registrant.organization
     click_on "Update Registrant"
 
     assert_text "Registrant was successfully updated"

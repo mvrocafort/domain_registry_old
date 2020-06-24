@@ -17,7 +17,7 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create domain" do
     assert_difference('Domain.count') do
-      post domains_url, params: { domain: { contacts: @domain.contacts, domain_name: @domain.domain_name, period: @domain.period } }
+      post domains_url, params: { domain: { name: @domain.name, period: @domain.period } }
     end
 
     assert_redirected_to domain_url(Domain.last)
@@ -34,7 +34,7 @@ class DomainsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update domain" do
-    patch domain_url(@domain), params: { domain: { contacts: @domain.contacts, domain_name: @domain.domain_name, period: @domain.period } }
+    patch domain_url(@domain), params: { domain: { name: @domain.name, period: @domain.period } }
     assert_redirected_to domain_url(@domain)
   end
 

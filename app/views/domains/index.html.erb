@@ -1,27 +1,46 @@
+
 <% if user_signed_in? %>
   <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>
 <% else %>
   <%= link_to('Log In', new_user_session_path) %>
 <% end %>
 
+<p id="notice"><%= notice %></p>
+
 <h1>Domains</h1>
 
+
+
+<br>
+
+<%= form_tag(domains_path, method: :get) do %>
+  <%= label_tag(:search, "Enter Domain:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @domains == nil %>
+  empty
+<% else %>
+  
 <table>
   <thead>
     <tr>
-      <th>Domain name</th>
+      <th>Name</th>
       <th>Period</th>
-      <th>Contacts</th>
-      <th colspan="3"></th>
+      <th>Registration Date</th>
+      <th>Expiration Date</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @domains.each do |domain| %>
       <tr>
-        <td><%= domain.domain_name %></td>
+        <td><%= domain.name %></td>
         <td><%= domain.period %></td>
-        <td><%= domain.contacts %></td>
+        <td><%= domain.registration_date %></td>
+        <td><%= domain.expiration_date %></td>
         <td><%= link_to 'Show', domain %></td>
         <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
         <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,17 +48,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Domain', new_domain_path %>
-
-
-<br>
-
-<%= search_form_for @q do |f| %>
-<%= f.label :domain_name %>
-<%= f.text_field :domain_name_cont, class: 'form-control' %>
-<%= f.submit class: 'btn btn-primary' %>
 <% end %>
-

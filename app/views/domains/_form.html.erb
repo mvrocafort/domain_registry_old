@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :domain_name %>
-    <%= form.text_field :domain_name %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
     <%= form.label :period %>
-    <%= form.text_field :period %>
+    <%= form.number_field :period %>
   </div>
 
   <div class="field">
-    <%= form.label :contacts %>
-    <%= form.text_field :contacts %>
+    <%= form.label :registration_date %>
+    <%= form.date_field :registration_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expiration_date %>
+    <%= form.date_field :expiration_date %>
   </div>
 
   <div class="actions">
